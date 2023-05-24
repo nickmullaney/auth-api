@@ -3,13 +3,14 @@
 const express = require('express');
 const authRouter = express.Router();
 
-const { users } = require('./models/users');
+const { users } = require('../models/index.js');
 const basicAuth = require('./middleware/basic.js')
 const bearerAuth = require('./middleware/bearer.js')
 const permissions = require('./middleware/acl.js')
 
 authRouter.post('/signup', async (req, res, next) => {
   try {
+    // const {username, password, role} = req.body;
     let userRecord = await users.create(req.body);
     const output = {
       user: userRecord,
@@ -22,11 +23,17 @@ authRouter.post('/signup', async (req, res, next) => {
 });
 
 authRouter.post('/signin', basicAuth, (req, res, next) => {
-  const user = {
-    user: req.user,
-    token: req.user.token
-  };
-  res.status(200).json(user);
+  console.log('User: ', req.user, 'Token: ', req.user.token)
+  try{
+    const user = {
+      user: req.user,
+      token: req.user.token
+    };
+    
+    res.status(200).json(user);
+  }catch(e){
+    console.log(e.message, 'AHHHHHH');
+  }
 });
 
 authRouter.get('/users', bearerAuth, permissions('delete'), async (req, res, next) => {
