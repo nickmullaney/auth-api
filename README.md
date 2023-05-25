@@ -73,6 +73,37 @@ Each of these constraints will have to be handled on both the backend and the fr
 - Control physical & visual access (hide/show/alter) to components based on RBAC rules
 - Alter behaviors based on RBAC rules
 
+
+### Testing
+
+The tests are pre-written for you. Make sure they pass!
+
+### Assignment Submission Instructions
+
+Refer to the the [Submitting Express Server Lab Submission Instructions](../../../reference/submission-instructions/labs/express-servers.md) for the complete lab submission process and expectations
+
+#### `.env` requirements (where applicable)
+
+port variable exists within the env sample
+
+
+#### How to initialize/run your application (where applicable)
+
+clone repo, `npm i`, then run `nodemon` in the terminal
+- e.g. `npm start`
+
+#### How to use your library (where applicable)
+
+#### Routes
+<!-- All routes should be documented -->
+- GET : `/signin` - specific route to hit
+- GET : `/signup` - specific route to hit
+- GET : `/` - proof of life
+
+#### Tests
+
+to run tests after running `npm i`, run the command `npm test` 
+
 ## UML
 [image](./assets/lab8%20UML.png)
 
