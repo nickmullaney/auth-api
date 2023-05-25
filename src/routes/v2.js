@@ -19,11 +19,12 @@ router.param('model', (req, res, next) => {
   }
 });
 
-router.get('/:model',basicAuth, handleGetAll);
+router.get('/:model', basicAuth, handleGetAll);
 router.get('/:model/:id', basicAuth, handleGetOne);
-router.post('/:model',bearer, acl('update'), handleCreate);
-router.put('/:model/:id', handleUpdate);
-router.delete('/:model/:id', handleDelete);
+router.post('/:model', bearer, acl('create'), handleCreate);
+router.put('/:model/:id', bearer, acl('update'), handleUpdate);
+router.patch('/:model/:id', bearer, acl('update'), handleUpdate);
+router.delete('/:model/:id', bearer, acl('delete'), handleDelete);
 
 async function handleGetAll(req, res) {
   let allRecords = await req.model.get();

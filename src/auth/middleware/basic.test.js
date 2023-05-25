@@ -2,7 +2,7 @@
 
 // this test suite failing, but tests PASSING and specific to lab-06, basic auth.  do they work for lab-07?
 
-const basicAuth = require('.');
+const basicAuth = require('./basic');
 const { sequelize, userModel } = require('../../models');
 const base64 = require('base-64');
 
