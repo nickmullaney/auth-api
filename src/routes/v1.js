@@ -7,6 +7,7 @@ const router = express.Router();
 
 router.param('model', (req, res, next) => {
   const modelName = req.params.model;
+  // Looks for the models and if it exists then
   if (dataModules[modelName]) {
     req.model = dataModules[modelName];
     next();
