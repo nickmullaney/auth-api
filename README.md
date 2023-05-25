@@ -104,6 +104,15 @@ clone repo, `npm i`, then run `nodemon` in the terminal
 
 to run tests after running `npm i`, run the command `npm test` 
 
+## Approach
+1. Create Repository
+2. Add starter codes
+3. Add all of the configs
+4. Extract all files from the `api-server`, and bring them to the root of the new `auth-api`
+5. insert `auth`(from the `auth-server`) folder into the other repositories `src` folder
+6. make sure and confirm that everything works
+   1. models - we need ONE `models/index.js` so we will need to import users from `auth/models` into `src/models`
+
 ## UML
 [image](./assets/lab8%20UML.png)
 

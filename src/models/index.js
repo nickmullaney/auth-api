@@ -18,7 +18,7 @@ module.exports = {
   food: new Collection(food),
   clothes: new Collection(clothes),
   // Double check this out it should work
-  users: userModel(sequelize, DataTypes),
+  users,
   // users: new Collection(users)
 };
 
