@@ -72,3 +72,11 @@ Each of these constraints will have to be handled on both the backend and the fr
 - Manage login state, capabilities
 - Control physical & visual access (hide/show/alter) to components based on RBAC rules
 - Alter behaviors based on RBAC rules
+
+## UML
+[image](./assets/lab8%20UML.png)
+
+## Collaboration
+
+Thanks to Ryan E, Ike S, and Reece R, for collaboration assistance
+Thanks to ChatGPT for assistance with the Tests

@@ -11,11 +11,13 @@ const DATABASE_URL = process.env.NODE_ENV === 'test' ? 'sqlite:memory:' : proces
 const sequelize = new Sequelize(DATABASE_URL);
 const food = foodModel(sequelize, DataTypes);
 const clothes = clothesModel(sequelize, DataTypes);
+const users = userModel(sequelize, DataTypes);
 
 module.exports = {
   db: sequelize,
   food: new Collection(food),
   clothes: new Collection(clothes),
   users: userModel(sequelize, DataTypes),
+  // users: new Collection(users)
 };
 
